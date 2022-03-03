@@ -16,7 +16,7 @@ contract MyToken is ERC721 {
   function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
     string memory name = string(abi.encodePacked("MyToken #", tokenId.toString()));
     string memory description = "An example SVG-based, fully on-chain NFT";
-    string memory svg = '<svg viewBox="0 0 1000 1000"><circle cx={500} cy={500} r={400} fill="papayawhip" /></svg>';
+    string memory svg = '<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1000 1000"><circle cx="500" cy="500" r="400" fill="papayawhip" /></svg>';
 
     return SVG721.metadata(name, description, svg);
   }
